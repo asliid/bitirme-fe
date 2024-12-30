@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -7,6 +7,7 @@ import Chatbot from "./components/Chatbot";
 import HomePage from "./components/HomePage";
 
 const RoutesConfig = ({ isLogin, setIsLogin }) => {
+  
   return (
     <Routes>
       {/* Giriş yapılmışsa erişilebilecek yollar */}

@@ -16,7 +16,7 @@ const App = () => {
     };
 
     checkLoginStatus();
-  }, []);
+  }, [localStorage.getItem("isLogin")]);
 
   if (loading) {
     return <div>Yükleniyor...</div>; // Yükleme ekranı

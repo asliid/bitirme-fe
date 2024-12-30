@@ -23,7 +23,7 @@ export default function Login() {
         // Token'ı localStorage'a kaydet
         localStorage.setItem('isLogin', 'true');
         localStorage.setItem('token', response.data.token);
-
+        window.location.reload();
         // Başarılı girişten sonra yönlendirme
         navigate('/'); // Ana sayfaya yönlendir
       } catch (error) {
