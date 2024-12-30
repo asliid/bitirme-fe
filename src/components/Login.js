@@ -18,23 +18,26 @@ export default function Login() {
     if (Object.keys(validationErrors).length === 0) {
       try {
         // Backend'e POST isteği gönder
-        const response = await axios.post('api/auth/login', { username, password });
+        const response = await axios.post('/api/auth/login', { username, password });
 
         // Token'ı localStorage'a kaydet
         localStorage.setItem('isLogin', 'true');
         localStorage.setItem('token', response.data.token);
 
-        // Ana sayfaya yönlendir
-        navigate('/');
+        // Başarılı girişten sonra yönlendirme
+        navigate('/'); // Ana sayfaya yönlendir
       } catch (error) {
+        // Hata mesajını ayıkla
         const errorMessage = error.response?.data?.message || 'Giriş başarısız, lütfen bilgilerinizi kontrol edin.';
         setApiError(errorMessage);
       }
     } else {
+      // Hata durumunda hata mesajlarını güncelle
       setErrors(validationErrors);
     }
   };
 
+  // Form doğrulama fonksiyonu
   const validateForm = () => {
     const errors = {};
     if (username.length < 6 || username.length > 30) {
