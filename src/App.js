@@ -8,6 +8,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   // Kullanıcının login durumunu kontrol et
+  //deneme
   useEffect(() => {
     const checkLoginStatus = () => {
       setIsLogin(localStorage.getItem("isLogin") === "true");
