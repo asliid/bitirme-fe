@@ -19,10 +19,10 @@ export default function Login() {
       try {
         // Backend'e POST isteği gönder
         const response = await axios.post('/api/auth/login', { username, password });
-
+        console.log(response,"haahsh")
         // Token'ı localStorage'a kaydet
         localStorage.setItem('isLogin', 'true');
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', "Bearer " +response?.data?.accessToken);
         window.location.reload();
         // Başarılı girişten sonra yönlendirme
         navigate('/'); // Ana sayfaya yönlendir

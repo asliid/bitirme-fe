@@ -1,49 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { getUserProfile } from "../services/UserService"; // Servisi import ediyoruz
+import './Profile.css'; // CSS dosyasını import ediyoruz
 
 const Profile = () => {
-  const [profileData, setProfileData] = useState(null);
+  const [userProfile, setUserProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchProfileData = async () => {
-    try {
-      const response = await fetch('/api/auth/profile', {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem("token")}`,
-          'Content-Type': 'application/json'
-        }
-      });
-  
-      if (!response.ok) {
-        const errorText = await response.text(); // Hata mesajını metin olarak al
-        throw new Error(`Network response was not ok: ${errorText}`);
-      }
-  
-      const data = await response.json();
-      setProfileData(data);
-    } catch (error) {
-      console.error('Error fetching profile data:', error);
-      setError(error.message);
-    }
-  };
-  
   useEffect(() => {
-    fetchProfileData();
+    // Profil verisini almak için getUserProfile fonksiyonunu çağırıyoruz
+    const fetchUserProfile = async () => {
+      try {
+        const data = await getUserProfile();
+        setUserProfile(data); // Gelen veriyi state'e kaydediyoruz
+      } catch (error) {
+        setError("Profil bilgileri alınırken bir hata oluştu.");
+        console.error(error);
+      } finally {
+        setLoading(false); // Yükleniyor durumunu false yapıyoruz
+      }
+    };
+
+    fetchUserProfile();
   }, []);
 
+  if (loading) {
+    return <p>Yükleniyor...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
-    <div>
-      <h1>Profile</h1>
-      {error && <p>Error: {error}</p>}
-      {profileData ? (
-        <div>
-          {/* Render profile data here */}
-          <p>Name: {profileData.name}</p>
-          <p>Email: {profileData.email}</p>
-          {/* Add more fields as necessary */}
+    <div className="profile-container">
+      <h1>Profil Bilgileriniz</h1>
+      {userProfile ? (
+        <div className="profile-info">
+          <p><strong>Kullanıcı Adı:</strong> {userProfile.username}</p>
+          <p><strong>Ad:</strong> {userProfile.name}</p>
+          <p><strong>Soyadı:</strong> {userProfile.surname}</p>
+          <p><strong>Kişilik Tipi:</strong> {userProfile.userPersonality}</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>Profil bilgisi bulunamadı.</p>
       )}
     </div>
   );

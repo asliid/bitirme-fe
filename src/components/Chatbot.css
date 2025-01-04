@@ -1,0 +1,81 @@
+/* Chatbot.css */
+
+.chatbot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ekranın tamamını kapla */
+  background-color: #f5f5f5; /* Arka plan rengi */
+}
+
+.chatbox {
+  width: 60%; /* Daha geniş bir chat kutusu */
+  max-width: 800px; /* Maksimum genişlik */
+  height: 80%; /* Daha yüksek bir chat kutusu */
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-history {
+  flex: 1; /* Chat geçmişi kısmı genişler */
+  padding: 20px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.message.user {
+  background-color: #d1e7dd;
+  align-self: flex-end; /* Kullanıcı mesajını sağa hizalar */
+}
+
+.message.bot {
+  background-color: #e9ecef;
+  align-self: flex-start; /* Bot mesajını sola hizalar */
+}
+
+.message-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.message-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #0056b3;
+}
+
+.message-input button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

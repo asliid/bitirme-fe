@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import RoutesConfig from "./RoutesConfig";
-import Header from "./components/Header"; // Header bileşenini ekleyin
+import Header from "./container/Header"; // Header bileşenini ekleyin
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(() => localStorage.getItem("isLogin") === "true");

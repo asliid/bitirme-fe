@@ -1,0 +1,27 @@
+.profile-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .profile-info {
+    margin-top: 20px;
+  }
+  
+  .profile-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+  
+  .profile-info strong {
+    color: #555;
+  }

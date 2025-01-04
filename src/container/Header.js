@@ -1,4 +1,6 @@
 import React from "react";
+import "./container.css";
+
 import { Link } from "react-router-dom";
 
 const Header = ({ setIsLogin }) => {
@@ -9,10 +11,12 @@ const Header = ({ setIsLogin }) => {
   };
 
   return (
-    <nav>
+    <nav className="navbar">
       <Link to="/">Ana Sayfa</Link>
-      <Link to="/chatbot">Chatbot</Link>
       <Link to="/profile">Profil</Link>
+      <Link to="/chatbot">Chatbot</Link>
+      <Link to="/personality-test">Kişilik Testi</Link>
+
       <button onClick={handleLogout}>Çıkış Yap</button>
     </nav>
   );

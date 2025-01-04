@@ -60,4 +60,38 @@
     background-color: rgb(153, 151, 151);
     float: left;
   }
+  .navbar {
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    padding: 10px 20px; /* İç boşluk */
+    border-bottom: 2px solid #ddd; /* Alt çizgi */
+    display: flex; /* Flexbox kullanımı */
+    align-items: center; /* Dikey hizalama */
+    justify-content: space-around; /* Bileşenler arasında eşit boşluk */
+  }
   
+  .navbar a,
+  .navbar button {
+    text-decoration: none; /* Altı çizgiyi kaldır */
+    color: #007bff; /* Mavi renk */
+    font-weight: bold; /* Kalın yazı */
+    font-size: 16px; /* Yazı boyutu */
+    transition: color 0.3s ease; /* Geçiş efekti */
+  }
+  
+  .navbar a:hover {
+    color: #0056b3; /* Daha koyu mavi hover efekti */
+  }
+  
+  .navbar button {
+    background-color: #dc3545; /* Kırmızı arka plan */
+    color: white; /* Beyaz yazı */
+    border: none; /* Kenarlık yok */
+    padding: 8px 15px; /* Buton iç boşluk */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    cursor: pointer; /* El işareti */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+  }
+  
+  .navbar button:hover {
+    background-color: #c82333; /* Daha koyu kırmızı hover efekti */
+  } 

@@ -1,0 +1,134 @@
+/* Genel yazı stili */
+body {
+  font-family: 'Arial', sans-serif; /* Genel font */
+  line-height: 1.6; /* Daha iyi okunabilirlik için satır yüksekliği */
+  background-color: #f7f9fc; /* Arka plan rengi */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ana kapsayıcı */
+.personality-test-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  padding: 20px;
+}
+
+/* Başlık */
+.personality-test-container h1 {
+  font-size: 2.5rem; /* Daha büyük başlık */
+  font-weight: bold; /* Kalın yazı */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Soru kartı */
+.question-card {
+  width: 100%;
+  max-width: 700px; /* Daha geniş kutucuk */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Sorular */
+.question-card p {
+  font-size: 1.5rem; /* Daha büyük yazı */
+  font-weight: bold; /* Kalın yazı */
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Buton grubu */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Butonlar */
+.question-card button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 15px 20px; /* Daha geniş ve yüksek butonlar */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem; /* Daha büyük yazı */
+  font-weight: bold; /* Kalın yazı */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+/* Evet Butonu */
+.question-card button:nth-child(1) {
+  background-color: #c9f7e5; /* Hafif yeşil */
+  color: #6fc390;
+}
+
+/* Hayır Butonu */
+.question-card button:nth-child(2) {
+  background-color: #f8d7da; 
+  color: #ee8f8f;
+}
+
+/* Fark Etmez Butonu */
+.question-card button:nth-child(3) {
+  background-color: #e2e3e5; 
+  color: #999999;
+}
+
+/* Hover efekti */
+.question-card button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Gönder Butonu */
+.submit-button {
+  margin-top: 20px;
+  padding: 15px 30px; /* Daha büyük buton */
+  font-size: 1.4rem; /* Daha büyük yazı */
+  font-weight: bold; /* Kalın yazı */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Gönder Butonu Hover */
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Yükleniyor Metni */
+.loading-text {
+  font-size: 1.5rem;
+  font-weight: bold; /* Kalın yazı */
+  color: #666;
+  text-align: center;
+}
+.personality-result-card {
+  background-color: #e9f7e5;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.personality-result-card h2 {
+  color: #4CAF50;
+}
+
+.personality-result-card p {
+  color: #333;
+}

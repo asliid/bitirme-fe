@@ -5,6 +5,7 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import Chatbot from "./components/Chatbot";
 import HomePage from "./components/HomePage";
+import PersonalityTestPage from "./components/PersonalityTestPage";
 
 const RoutesConfig = ({ isLogin, setIsLogin }) => {
   
@@ -16,6 +17,7 @@ const RoutesConfig = ({ isLogin, setIsLogin }) => {
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/personality-test" element={< PersonalityTestPage/>} />
           <Route path="*" element={<Navigate to="/" />} /> {/* Tanımsız yollar */}
         </>
       ) : (
