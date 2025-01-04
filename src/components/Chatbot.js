@@ -28,6 +28,16 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       <div className="chatbox">
+        {/* Üst kısmı ekliyoruz */}
+        <div className="chatbot-welcome">
+          <h2>Merhaba, ben Kariyer Asistanınız!</h2>
+          <p>
+            Bana ilgi alanlarınızdan, becerilerinizden ya da kariyer hedeflerinizden bahsedebilirsiniz. 
+            Size en uygun kariyer yollarını bulmanıza yardımcı olacağım!
+          </p>
+        </div>
+
+        {/* Sohbet geçmişi */}
         <div className="chat-history">
           {chatHistory.map((msg, idx) => (
             <div key={idx} className={`message ${msg.sender === 'user' ? 'user' : 'bot'}`}>
@@ -35,6 +45,8 @@ const Chatbot = () => {
             </div>
           ))}
         </div>
+
+        {/* Mesaj yazma bölümü */}
         <div className="message-input">
           <input
             type="text"

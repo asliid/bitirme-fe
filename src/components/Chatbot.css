@@ -79,3 +79,20 @@
   background-color: #cccccc;
   cursor: not-allowed;
 }
+.chatbot-welcome {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.chatbot-welcome h2 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.chatbot-welcome p {
+  font-size: 1.1rem;
+  color: #34495e;
+}
