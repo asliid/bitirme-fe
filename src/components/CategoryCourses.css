@@ -1,0 +1,43 @@
+.category-courses-container {
+    padding: 30px;
+    background: #fefbf6;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 40px;
+  }
+  
+  .kategori-secici {
+    margin-bottom: 20px;
+  }
+  
+  .kategori-secici select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+  }
+  
+  .kurslar-listesi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .kurs-karti {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .kurs-karti:hover {
+    transform: translateY(-4px);
+  }
+  
+  .kurs-karti h4 {
+    margin-bottom: 8px;
+    color: #333;
+  }

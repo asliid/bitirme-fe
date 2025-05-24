@@ -1,0 +1,45 @@
+.test-selection-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+  
+  .test-selection-container h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .test-card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .test-card {
+    background-color: #f7f9fc;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .test-card:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .test-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .test-card p {
+    font-size: 1rem;
+    color: #555;
+  }

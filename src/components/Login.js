@@ -14,27 +14,22 @@ export default function Login() {
     event.preventDefault();
 
     // Form doğrulama
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
+
+   
       try {
         // Backend'e POST isteği gönder
         const response = await axios.post('/api/auth/login', { username, password });
-        console.log(response,"haahsh")
+    
         // Token'ı localStorage'a kaydet
         localStorage.setItem('isLogin', 'true');
         localStorage.setItem('token', "Bearer " +response?.data?.accessToken);
         window.location.reload();
-        // Başarılı girişten sonra yönlendirme
         navigate('/'); // Ana sayfaya yönlendir
       } catch (error) {
         // Hata mesajını ayıkla
         const errorMessage = error.response?.data?.message || 'Giriş başarısız, lütfen bilgilerinizi kontrol edin.';
         setApiError(errorMessage);
       }
-    } else {
-      // Hata durumunda hata mesajlarını güncelle
-      setErrors(validationErrors);
-    }
   };
 
   // Form doğrulama fonksiyonu
@@ -48,37 +43,41 @@ export default function Login() {
     }
     return errors;
   };
-
   return (
-    <div className="user-form-container">
-      <form onSubmit={handleSubmit} className="user-form">
-        <h2>Giriş Yap</h2>
+    <div className="form-container">
+      <form className="form-box" onSubmit={handleSubmit}>
+        <h2 className="form-title">Giriş Yap</h2>
+
         <div className="form-group">
-          <label htmlFor="username">Kullanıcı Adı</label>
+          <label className="form-label">Kullanıcı Adı</label>
           <input
             type="text"
-            id="username"
-            className="form-control"
+            className="form-input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Kullanıcı adınızı girin"
           />
-          {errors.username && <small className="error-text">{errors.username}</small>}
         </div>
+
         <div className="form-group">
-          <label htmlFor="password">Şifre</label>
+          <label className="form-label">Şifre</label>
           <input
             type="password"
-            id="password"
-            className="form-control"
+            className="form-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Şifrenizi girin"
           />
-          {errors.password && <small className="error-text">{errors.password}</small>}
         </div>
-        <button type="submit" className="btn btn-primary">Giriş Yap</button>
-        {apiError && <div className="api-error">{apiError}</div>}
+
+        {apiError && <div className="error-message">{apiError}</div>}
+
+        <button type="submit" className="submit-button">Giriş Yap</button>
+
+        <div className="register-link">
+          <span>Hesabınız yok mu?</span>
+          <button type="button" onClick={() => navigate('/register')}>Kayıt Ol</button>
+        </div>
       </form>
     </div>
   );

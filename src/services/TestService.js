@@ -58,3 +58,81 @@ if (token) {
   throw new Error('Token bulunamadı');
 }
 };
+
+export const submitValueResult = async (dominantValue) => {
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    try {
+      const data = jwtDecode(token);
+      const username = data.sub;
+
+      const response = await axiosInstance.post(
+        `/personality/submit-dominant-value/${username}`,
+        dominantValue,
+        {
+          headers: { 'Content-Type': 'text/plain' }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Sonuç gönderilirken hata:', error);
+      throw error;
+    }
+  } else {
+    console.error('Token bulunamadı');
+    throw new Error('Token bulunamadı');
+  }
+};
+
+export const submitEnvironmentResult = async (dominantEnvironment) => {
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    try {
+      const data = jwtDecode(token);
+      const username = data.sub;
+
+      const response = await axiosInstance.post(
+        `/personality/submit-dominant-environment/${username}`,
+        dominantEnvironment,
+        {
+          headers: { 'Content-Type': 'text/plain' }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Çalışma ortamı sonucu gönderilirken hata:', error);
+      throw error;
+    }
+  } else {
+    console.error('Token bulunamadı');
+    throw new Error('Token bulunamadı');
+  }
+};
+
+export const submitMotivationResult = async (dominantMotivation) => {
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    try {
+      const data = jwtDecode(token);
+      const username = data.sub;
+
+      const response = await axiosInstance.post(
+        `/personality/submit-dominant-motivation/${username}`,
+        dominantMotivation,
+        {
+          headers: { 'Content-Type': 'text/plain' }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Motivasyon sonucu gönderilirken hata:', error);
+      throw error;
+    }
+  } else {
+    console.error('Token bulunamadı');
+    throw new Error('Token bulunamadı');
+  }
+};
