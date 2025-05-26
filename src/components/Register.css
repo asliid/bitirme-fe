@@ -1,83 +1,73 @@
-/* Register.css */
-.register-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+.welcome-message {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  margin: 0;
+
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.register-button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
   }
-  
-  h1 {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .input-label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    width: 120px;  /* Adjust this width as necessary */
-    margin-right: 15px; /* Space between label and input */
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  
-  .input-field:focus {
-    outline: none;
-    border-color: #007bff;
-  }
-  
-  .register-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .register-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .success-message {
-    color: green;
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .error-message {
-    color: #ff0000; /* Kırmızı */
-    font-weight: bold; /* Kalın yazı */
-    margin-bottom: 15px;
-  }
-  
-  .field-error {
-    color: #ff0000; /* Kırmızı */
-    font-size: 12px;
-    font-weight: bold; /* Kalın yazı */
-    margin-top: 4px;
-    margin-left: 110px;
-  }
-  
+}
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../services/UserService';
-import './Register.css'; // Import the CSS file
+import './Register.css'; 
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -55,64 +55,60 @@ function Register() {
   };
   return (
     <div className="register-container">
-      <h1>Register</h1>
-      {successMessage && <p className="success-message">{successMessage}</p>}
-      {error && <p className="error-message">{error}</p>}
-
-      <div className="input-container">
-        <label htmlFor="username" className="input-label">Username</label>
-        <input
-          id="username"
-          type="text"
-          placeholder="Username"
-          value={formData.username}
-          onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-          className="input-field"
-        />
-        {errors.username && <p className="field-error">{errors.username}</p>}
-      </div>
-
-      <div className="input-container">
-        <label htmlFor="password" className="input-label">Password</label>
-        <input
-          id="password"
-          type="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-          className="input-field"
-        />
-        {errors.password && <p className="field-error">{errors.password}</p>}
-      </div>
-
-      <div className="input-container">
-        <label htmlFor="name" className="input-label">Name</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="input-field"
-        />
-        {errors.name && <p className="field-error">{errors.name}</p>}
-      </div>
-
-      <div className="input-container">
-        <label htmlFor="surname" className="input-label">Surname</label>
-        <input
-          id="surname"
-          type="text"
-          placeholder="Surname"
-          value={formData.surname}
-          onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
-          className="input-field"
-        />
-        {errors.surname && <p className="field-error">{errors.surname}</p>}
-      </div>
-
-      <button onClick={handleRegister} className="register-button">Register</button>
+    <div className="header-section">
+      <p className="welcome-message">
+        Aramıza katıl, potansiyelini keşfet ve kariyer yolculuğuna bizimle başla!
+      </p>
+      <h1>Kayıt Ol</h1>
+   
+  <div className="form-grid">
+    <div className="input-container">
+      <label className="input-label" htmlFor="username">Kullanıcı Adı</label>
+      <input
+        type="text"
+        id="username"
+        className="input-field"
+        value={formData.username}
+        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+      />
     </div>
+    <div className="input-container">
+      <label className="input-label" htmlFor="password">Şifre</label>
+      <input
+        type="password"
+        id="password"
+        className="input-field"
+        value={formData.password}
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+      />
+    </div>
+    <div className="input-container">
+      <label className="input-label" htmlFor="name">İsim</label>
+      <input
+        type="text"
+        id="name"
+        className="input-field"
+        value={formData.name}
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+      />
+    </div>
+    <div className="input-container">
+      <label className="input-label" htmlFor="surname">Soyisim</label>
+      <input
+        type="text"
+        id="surname"
+        className="input-field"
+        value={formData.surname}
+        onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+      />
+    </div>
+  </div>
+
+  <button className="register-button" onClick={handleRegister}>
+    Hemen Katıl ve Başla
+  </button>
+</div>
+</div>
   );
 }
 
